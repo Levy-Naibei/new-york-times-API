@@ -1,34 +1,30 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import BookItem from './BookItem';
+import axios from 'axios'
 
-export default class BookList extends Component {
-    state = {
-        books:[]
-    }
-    async componentDidMount(){
+const BookList = () => {
+    const[books, setBooks] = useState([]);
+
+    const fetchBooks = async() => {
         const url = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json';
-        //const apiKey = API_KEY;
-        const data = await fetch(`${url}?api-key=${process.env.REACT_APP_API_KEY}`)
-                        .then((response) => response.json());
-        this.setState(() => {
-            return {
-                books: data.results.books
-            };
-        })
+        const response = await axios(`${url}?api-key=${process.env.REACT_APP_API_KEY}`);
+        setBooks(response.data.results.books);
+        console.log(response.data.results.books)
     }
-    
-    render() {        
-        const {books} = this.state;
 
-        console.log("books here ", books)
+    // make api calls
+    useEffect(() => {
+        fetchBooks();
+    }, []);
 
-        return (
-            <div className='flex-container py-5'>
-                {books.map( (book, i) => {
-                    return <BookItem key={i} book={book} />;
-                })
-                }
-            </div>
-        )
-    }
+    return (
+        <div className='flex-container py-5'>
+            {books.map( (book, i) => {
+                return <BookItem key={i} book={book} />;
+            })
+            }
+        </div>
+    )
 }
+
+export default BookList;
