@@ -15,7 +15,9 @@ const BookList = () => {
     // make api calls
     useEffect(() => {
         fetchBooks();
-    }, []);
+    }, []); /*empty array ensures useEffect
+            only runs when a component mounts
+            */
 
     return (
         <div className='flex-container py-5'>
