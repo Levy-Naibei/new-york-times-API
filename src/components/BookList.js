@@ -6,8 +6,7 @@ const BookList = () => {
     const[books, setBooks] = useState([]);
 
     const fetchBooks = async() => {
-        const url = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json';
-        const response = await axios(`${url}?api-key=${process.env.REACT_APP_API_KEY}`);
+        const response = await axios(`${process.env.REACT_APP_URL}?api-key=${process.env.REACT_APP_API_KEY}`);
         setBooks(response.data.results.books);
         console.log(response.data.results.books)
     }
