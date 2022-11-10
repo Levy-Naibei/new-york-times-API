@@ -11,10 +11,9 @@
 
 - On terminal, `git clone https://github.com/Levy-Naibei/new-york-times-API.git`
 - yarn install
-- create `.env` file at the root of app directory and add API key
+- create `.env` file at the root directory and add API key as in `.env.sample.txt`
 - yarn start
 
 ### Upcoming features
 
-- Search by book genre
-- How to buy
+- Authentication
