@@ -9,9 +9,24 @@
   width: 240px;
 }
 
+#order {
+  margin: 10px 0;
+  font-size: 16px;
+  background-color: rgb(243, 205, 156);
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-weight: inherit;
+}
+
+#order_link {
+  margin: 0 auto;
+}
+
 .flex-container {
   display: inline-flex;
   flex-flow: row wrap;
+  
 }
 
 
