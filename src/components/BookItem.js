@@ -3,7 +3,7 @@ import '../App.css';
 
 const BookItem = (props) => {
     const { book } = props;
-    const { publisher, description, title, book_image } = book;
+    const { publisher, description, title, book_image, amazon_product_url } = book;
 
     return (
         <div className='book'>
@@ -12,8 +12,14 @@ const BookItem = (props) => {
                 <div className="media-body">
                     <h5><i>{title}</i></h5>
                     <p>{publisher}</p>
-                    <p>{description}</p>
+                    <p>{description.substring(0, 80) + '...'}</p>
                 </div>
+            </div>
+            <div id="order_link">
+                <a href={amazon_product_url}
+                    target='_blank' rel='noopener noreferrer'>
+                    <button id='order'>Order</button>
+                </a>
             </div>
         </div>
     )
