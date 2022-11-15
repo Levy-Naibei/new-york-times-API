@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import BookList from './BookList';
+import BookItem from './BookItem';
 
 export const Search = ({ books }) => {
     const [book, setBooks] = React.useState({ query: '', matches: [] });
@@ -24,6 +26,22 @@ export const Search = ({ books }) => {
                 onChange={handleSearch}
                 name={book.query}>
             </input>
+            <div className="search_results">
+                <ul>
+                    {
+                        (
+                            book.query === '' ? <BookList books={books} />
+                                : !book.matches.length ? <p className="py-5">No search results found!</p>
+                                    : book.matches.map((book, index) => {
+                                        return (
+                                            <div id="search_results">
+                                                <BookItem key={index} book={book} />
+                                            </div>
+                                        )
+                                    })
+                        )}
+                </ul>
+            </div>
         </div>
     )
 }

@@ -98,3 +98,8 @@
   font-style: italic;
   padding: 5px 10px 0px 0px;
 }
+
+#search_results {
+  display: flex;
+  flex-flow: column wrap;
+}

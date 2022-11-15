@@ -1,5 +1,4 @@
 import React from 'react';
-import BookList from './components/BookList';
 import Search from './components/Search';
 import axios from 'axios';
 import './App.css';
@@ -20,7 +19,6 @@ const App = () => {
     <div className='container mt-5 text-center'>
       <h3>NYT list of Best-selling books</h3>
       <Search books={books} />
-      <BookList books={books} />
     </div>
   );
 }
