@@ -7,7 +7,10 @@ export const Search = ({ books }) => {
         const searchWord = e.target.value;
         const results = books.filter(book => {
             if (searchWord === '') return books;
-            return book.title.toLowerCase().includes(searchWord.toLowerCase());
+            return (
+                book.title.toLowerCase().includes(searchWord.toLowerCase()) ||
+                book.publisher.toLowerCase().includes(searchWord.toLowerCase())
+            );
         });
         setBooks({ query: searchWord, matches: results });
         console.log('filtered books', book.matches);
@@ -17,7 +20,7 @@ export const Search = ({ books }) => {
         <div className="search">
             <input
                 type="search"
-                placeholder="Search by title"
+                placeholder="Search by title or publisher"
                 onChange={handleSearch}
                 name={book.query}>
             </input>
