@@ -1,5 +1,6 @@
-
-* {box-sizing: border-box;}
+* {
+  box-sizing: border-box;
+}
 
 .book {
   border-radius: 5px;
@@ -9,8 +10,7 @@
   width: 240px;
 }
 
-#order {
-  margin: 10px 0;
+#order {  
   font-size: 16px;
   background-color: rgb(243, 205, 156);
   padding: 5px;
@@ -20,13 +20,14 @@
 }
 
 #order_link {
-  margin: 0 auto;
+  margin: 10px auto;
+  /* position: absolute; */
 }
 
 .flex-container {
   display: inline-flex;
   flex-flow: row wrap;
-  
+
 }
 
 
@@ -35,6 +36,7 @@
   .book {
     width: 100%;
   }
+
   .search input[type=search] {
     float: none;
     display: block;
@@ -44,6 +46,7 @@
     padding: 14px;
     border: 1px solid #ccc;
   }
+
   .search input[type=search]:focus {
     border: none;
   }
@@ -61,7 +64,7 @@
   .book {
     width: 33.33%
   }
-} 
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media screen and (min-width: 992px) {
@@ -85,11 +88,13 @@
   border: none;
 }
 
-.media-body .desc {
-  padding: 5px 10px 5px 0px;
+.desc, .title {
+  padding: 5px 10px 5px 0px;;
+  word-break: break-word;
 }
 
-.title {
-  word-break: break-word;
-  padding: 5px 10px 5px 0px;
+.author, .publisher {
+  font-weight: bold;
+  font-style: italic;
+  padding: 5px 10px 0px 0px;
 }
