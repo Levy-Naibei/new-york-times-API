@@ -35,7 +35,7 @@
   .book {
     width: 100%;
   }
-  .search input[type=text] {
+  .search input[type=search] {
     float: none;
     display: block;
     text-align: left;
@@ -44,7 +44,7 @@
     padding: 14px;
     border: 1px solid #ccc;
   }
-  .search input[type=text]:focus {
+  .search input[type=search]:focus {
     border: none;
   }
 }
@@ -73,7 +73,7 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* @media only screen and (min-width: 1200px) {...}  */
 
-.search input[type=text] {
+.search input[type=search] {
   padding: 6px;
   border: none;
   margin-top: 8px;
@@ -81,6 +81,15 @@
   font-size: 17px;
 }
 
-.search input[type=text]:focus {
+.search input[type=search]:focus {
   border: none;
+}
+
+.media-body .desc {
+  padding: 5px 10px 5px 0px;
+}
+
+.title {
+  word-break: break-word;
+  padding: 5px 10px 5px 0px;
 }

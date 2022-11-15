@@ -10,9 +10,9 @@ const BookItem = (props) => {
             <div className="media">
                 <img src={book_image} className='mr-3 mt-3' style={{ width: '100px' }} alt='book-img' />
                 <div className="media-body">
-                    <h5><i>{title}</i></h5>
+                    <h5 className='title'><i>{title}</i></h5>
                     <p>{publisher}</p>
-                    <p>{description.substring(0, 80) + '...'}</p>
+                    <p className="desc">{description.substring(0, 80) + '...'}</p>
                 </div>
             </div>
             <div id="order_link">
